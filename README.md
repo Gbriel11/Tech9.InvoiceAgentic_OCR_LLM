@@ -44,6 +44,23 @@ All logic was built **directly in UiPath Studio (C#, Windows project)** using on
 - **PDF & OCR Activities** → to extract raw text from invoices.  
 - **WebAPI Activities** → to call the Ollama R
 
+## Future Work & Business Flexibility
+
+- **REF Integration**  
+  This prototype was intentionally kept simple (single `Main.xaml`) to highlight the OCR + LLM logic.  
+  In a production-grade deployment, the process should be migrated into the **Robotic Enterprise Framework (REF)**:  
+  - Transactions managed through Orchestrator Queues.  
+  - Built-in exception handling and retries.  
+  - Logging, business rule exceptions, and resilience at scale.  
+
+- **Business Flexibility**  
+  The design was created to keep the **business logic adaptable**:  
+  - Confidence thresholds can be tuned by stakeholders.  
+  - Field mappings and JSON schema can evolve with client needs.  
+  - Alternative LLMs or OCR engines can be swapped with minimal changes.  
+  - Rule sets (tax validation, subtotal/total checks, etc.) can be parameterized per client or per industry.  
+
+This ensures that the solution is not only technically robust but also **aligned with real business priorities** — allowing Tech9 to deliver automation that evolves alongside the customer’s growth.
 
 
 
