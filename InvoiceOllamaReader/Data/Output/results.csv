@@ -1,6 +1,0 @@
-FileName,SupplierName,InvoiceNumber,InvoiceDate,DueDate,Currency,Subtotal,Tax,Total,OverallConfidence,SourceUsed,Notes
-"Invoice_8_Green.pdf","EcoDrive Supplies","INV-8002","2025-03-08","2025-04-08","USD","3380","236.6","3616.6","0.95"
-"Invoice_6_Graphic.pdf","DriveTech Automotive","INV-6789","2025-03-01","2025-03-30","USD","2628","184","2812","0.95"
-"Invoice_7_Red.pdf","AutoMax Performance","INV-7001","2025-03-05","2025-04-05","USD","2539","178.73","2716.73","0.95"
-"Invoice_1.pdf","AutoParts Unlimited","INV-1001","2025-01-15","2025-02-15","USD","334","23.38","357.38","0.97"
-"Invoice_5.pdf","MotorTech Solutions","INV-5120","2025-02-15","2025-03-15","USD","275","19.25","294.25","0.98"
