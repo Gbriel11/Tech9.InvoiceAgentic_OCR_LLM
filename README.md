@@ -26,6 +26,26 @@ This project demonstrates an **OCR + LLM pipeline** for intelligent invoice proc
 - Packages: UiPath.System, UiPath.PDF, UiPath.OCR, UiPath.WebAPI, UiPath.Excel
 - .NET 6 Desktop Runtime
 - **Ollama** running on the host with `phi3:mini` pulled
+## Why Ollama?
+
+We deliberately chose **Ollama** as the LLM runtime because:  
+-  **Local & lightweight** → runs fully on the developer’s laptop, no need for external cloud APIs.  
+-  **Privacy & control** → sensitive invoice data never leaves the machine.  
+-  **Modular & flexible** → switching to a different open-source model (`phi3:mini`, `llama3`, `qwen2.5`, etc.) is as simple as changing the `model` parameter.  
+-  **Cost-efficient** → no API keys or pay-per-token costs, ideal for early-stage automation prototypes.  
+
+This aligns with Tech9’s vision of **agentic automation**: solutions that are adaptive, resilient, and do not rely on external dependencies to prove value.  
+
+---
+
+## Native UiPath Implementation
+
+All logic was built **directly in UiPath Studio (C#, Windows project)** using only official UiPath activities:  
+- **PDF & OCR Activities** → to extract raw text from invoices.  
+- **WebAPI Activities** → to call the Ollama R
+
+
+
 
 ## Setup
 1) **Ollama**
@@ -34,3 +54,7 @@ This project demonstrates an **OCR + LLM pipeline** for intelligent invoice proc
 ollama pull phi3:mini
 # expose to LAN (if calling from VM)
 OLLAMA_HOST=0.0.0.0:11434 ollama serve
+
+
+
+
