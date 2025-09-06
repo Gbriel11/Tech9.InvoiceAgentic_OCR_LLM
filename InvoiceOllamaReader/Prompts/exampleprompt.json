@@ -1,0 +1,8 @@
+{
+  "model": "phi3:mini",
+  "prompt": "You are an expert assistant specialized in reading invoices from OCR text.\r\nReturn ONLY a valid and compact JSON (no comments, no backticks) that follows this schema:\r\n\r\n{\r\n  \"supplier_name\": \"string\",\r\n  \"invoice_number\": \"string\",\r\n  \"invoice_date\": \"YYYY-MM-DD\",\r\n  \"due_date\": \"YYYY-MM-DD or null\",\r\n  \"currency\": \"USD|EUR|MXN|... (ISO if possible)\",\r\n  \"subtotal\": number,\r\n  \"tax\": number,\r\n  \"total\": number,\r\n  \"line_items\": [\r\n    {\"description\":\"string\",\"qty\": number,\"unit_price\": number,\"line_total\": number}\r\n  ],\r\n  \"confidence\": number (0.0-1.0)\r\n}\r\n\r\nRules:\r\n- If you are not sure about a field, set it to null or 0 and lower the \"confidence\" value.\r\n- Do NOT invent values; prioritize sections like “Total”, “Amount Due”, “Invoice #”.\r\n- Use ISO date format (YYYY-MM-DD).\r\n- Use numbers without currency symbols (no $, €, ,).\r\n- Try to make subtotal + tax ≈ total (±1–2%).\r\n\r\nOCR_TEXT:\r\nInvoice: INV-1001\r\nSupplier: AutoParts Unlimited\r\n123 Motorway Blvd Detroit, MI 48201\r\n\r\nInvoice Date: 2025-01-15\r\nDue Date: 2025-02-15\r\n\r\nDescription Qty Unit Price Line Total\r\nBrake Pads 4 $55.00 $220.00\r\nOil Filter 2 $12.50 $25.00\r\nEngine Belt 1 $89.00 $89.00\r\nSubtotal $334.00\r\nTax (7%) $23.38\r\nTotal $357.38\r\n\r\nThank you for your business!",
+  "stream": false,
+  "options": {
+    "temperature": 0.1
+  }
+}
